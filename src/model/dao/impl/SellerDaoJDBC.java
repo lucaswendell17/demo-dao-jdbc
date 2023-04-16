@@ -126,10 +126,8 @@ public class SellerDaoJDBC implements SellerDao {
 				Department dep = instantiateDepartment(rs);
 				Seller obj = instantiateSeller(rs, dep);
 				return obj;
-				
 			}
 			return null;
-			
 		}
 		catch (SQLException e) {
 			throw new DbException(e.getMessage());
@@ -151,7 +149,6 @@ public class SellerDaoJDBC implements SellerDao {
 					+ "ON seller.DepartmentId = department.Id "
 					+ "ORDER BY Name");
 			
-			
 			rs = st.executeQuery();
 			
 			List<Seller> list = new ArrayList<>();
@@ -167,7 +164,6 @@ public class SellerDaoJDBC implements SellerDao {
 				Seller obj = instantiateSeller(rs, dep);
 				list.add(obj);
 			}
-			
 			return list;
 		}
 		catch (SQLException e) {
@@ -207,7 +203,6 @@ public class SellerDaoJDBC implements SellerDao {
 				Seller obj = instantiateSeller(rs, dep);
 				list.add(obj);
 			}
-			
 			return list;
 		}
 		catch (SQLException e) {
